@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header >
-  <ion-navbar color='favourite'>
+  <ion-navbar color='primary'>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -16,7 +16,7 @@
 
 <ion-content padding>
     <ion-card>
-        <ion-card-header  color="favourite">
+        <ion-card-header  color="primary">
           Our History
         </ion-card-header>
         <ion-card-content>
@@ -25,5 +25,31 @@
         </ion-card-content>
       </ion-card>
 
-
-</ion-content>
+      <ion-card>
+          <ion-card-header  color="primary">
+              Corporate Leadership
+          </ion-card-header>
+          <ion-card-content>
+              <ion-list>
+                  <ion-item *ngFor="let item of leader">
+                      <ion-avatar item-start>
+                          <img src='{{BaseURL + item.image}}'>
+                        </ion-avatar>
+                        <h2>{{item.name}}</h2>
+                        <h3>{{item.designation}}</h3>
+                        <p class="show-text">{{item.description}}</p>
+                  </ion-item>
+                </ion-list>
+              <div [hidden]="leader || leaderErrMess">
+                <ion-spinner></ion-spinner>
+                <h4>Loading . . . Please Wait</h4>
+              </div>
+              <div *ngIf="leaderErrMess">
+                <h2>Error</h2>
+                <h4>{{leaderErrMess}}</h4>
+              </div>
+      
+      
+          </ion-card-content>
+        </ion-card>
+      </ion-content>

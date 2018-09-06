@@ -1,6 +1,6 @@
 
 <ion-header >
-  <ion-navbar color='favourite'>
+  <ion-navbar color='primary'>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -12,7 +12,7 @@
 <ion-content padding>
 
     <ion-card>
-        <ion-card-header  color="favourite">
+        <ion-card-header  color="primary">
           Location Information
         </ion-card-header>
         <ion-card-content>
@@ -31,14 +31,14 @@
         </ion-card-content>
         <ion-row no-padding>
             <ion-col>
-              <button ion-button clear small color="favourite" icon-start>
+              <button ion-button clear small color="primary" icon-start (click)="callRestaurant()">
                 <ion-icon name='call'></ion-icon>
                 CALL
               </button>
             </ion-col>
             
             <ion-col text-center>
-              <button ion-button clear small color="favourite" icon-start>
+              <button ion-button clear small color="primary" icon-start (click)="sendEmail()">
                 <ion-icon name='mail'></ion-icon>
                 EMAIL
               </button>
